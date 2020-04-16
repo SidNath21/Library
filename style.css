@@ -11,7 +11,7 @@ body{
 
 #formContainer{
 
-    min-width: 450px;
+    min-width: 475px;
     width: 35%;
     margin: 1em auto;
     border: 10px solid blue;
@@ -91,7 +91,7 @@ body{
 #booksContainer{
     margin: 1em auto;
     width: 80%;
-    min-width: 450px;
+    min-width: 475px;
     border: 10px solid red;
     background-color: tomato;
     border-radius: 10px;
@@ -102,42 +102,44 @@ body{
 #header{
     border: 5px solid yellow;
     background-color: grey;
-    font-size: 28px;
+    font-size: 1em;
     font-weight: bold;
-    text-shadow: 3px 3px black;
+    text-shadow: 2px 2px black;
     color: white;
     width: 90% ;
     margin: 0.5em auto;
-    padding: 0.5em 0;
     display: flex;
     flex-direction: row;
-    justify-content: space-evenly;
-    align-items: stretch;
+    
 }
 
 
 .bookList{
     text-align: center;
     margin: 0.5em auto;
-    padding: 0.5em 0;
     width: 90%;
     border: 5px solid black;
     border-radius: 5px;
     background-color: #191919 ;
     display: flex;
     flex-direction: row;
+    line-height: 1.5;
+    color: white;
+    overflow: hidden;
     
-    align-items: stretch;
 }
 
 .title{
-    width: 25%;
+    padding: 0.5em 0;
+    width: 20%;
     text-align: center;
+    vertical-align: middle;
     border-right: 1px solid white;
 }
 
 .author{
-    width: 25%;
+    padding: 0.5em 0;
+    width: 20%;
     text-align: center;
     border-left: 1px solid white;
     border-right: 1px solid white;
@@ -145,7 +147,8 @@ body{
 }
 
 .pages{
-    width: 25%;
+    padding: 0.5em 0;
+    width: 20%;
     text-align: center;
     border-left: 1px solid white;
     border-right: 1px solid white;
@@ -153,14 +156,69 @@ body{
 }
 
 .status{
-    width: 25%;
-    
+    padding: 0.5em 0;
+    width: 20%;
     text-align: center;
+    border-right: 1px solid white;
     border-left: 1px solid white;
     
+}
+
+.delete{
+    padding: 0.5em 0;
+    width: 20%;
+    text-align: center;
+    border-left: 1px solid white;
+}
+
+.statusButton{
+
+    text-align: center;
+    background: none;
+    
+    border: 3px solid #2ecc71;
+    color: #2ecc71;
+    font-weight: 700;
+    text-transform: uppercase;
+    cursor: pointer;
+    font-size: 0.75em;
+    position: relative;
+    outline: none;
+    
+    transition:  0.25s linear;
+    
+}
+
+.statusButton:hover{
+    color: white;
+    background: #2ecc71;
+}
+
+
+
+.deleteButton{
+    text-align: center;
+    font-weight: bolder;
+    font-size: 0.75em;
+    margin: 0 auto;
+    color: red;
+    background: none;
+    border: 3px solid;
+    cursor: pointer;
+    outline: none;
+    transition:  0.25s linear;
     
     
 }
+
+.deleteButton:hover{
+    color: black;
+    
+}
+
+
+
+
 
 .theme-switch-wrapper {
     display: flex;

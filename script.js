@@ -16,7 +16,7 @@ function addBookToLibrary(){
     const pages = form.elements["pages"].value;
     const read = form.elements["read"].checked;
 
-    if(emptyBook(title, author, pages)) console.log("empty")
+    if(emptyBook(title, author, pages)) return;
     if(containsBook(title, author)) return;
     
     library.push(new Book(title, author, pages, read, false));
@@ -88,16 +88,46 @@ function updateLibrary(){
 
             const status = document.createElement("div");
             status.classList = "status";
-            status.textContent = (bookStatus == true) ? "Completed" : "In Progress"; 
+            const statusButton = document.createElement("button");
+            statusButton.classList = "statusButton";
+            statusButton.textContent = (bookStatus == true) ? "Yes" : "No"; 
+            status.appendChild(statusButton);
 
+            statusButton.addEventListener("click", function(){
+                let text = statusButton.textContent;
+                statusButton.textContent = (text == "Yes") ? "No" : "Yes"; 
+            });
+
+           
+
+            const deleteBook = document.createElement("div");
+            deleteBook.classList = "delete";
+            const deleteButton = document.createElement("button");
+            deleteButton.classList = "deleteButton";
+            deleteButton.textContent = "X";
+            deleteBook.appendChild(deleteButton);
+
+            deleteButton.addEventListener("click", function(){
+                book.parentNode.removeChild(book);
+                delete_book(i);
+            });
+            
             book.appendChild(title);
             book.appendChild(author);
             book.appendChild(pages);
             book.appendChild(status);
+            book.appendChild(deleteBook);
             booksContainer.appendChild(book);
+
         }
 
     }
+}
+
+function delete_book(index){
+    
+    library.splice(index, 1);
+    updateLibrary();
 }
 
 function createHeading(){
@@ -117,23 +147,29 @@ function createHeading(){
 
     const status = document.createElement("div");
     status.classList = "status";
-    status.textContent = "Status";
+    status.textContent = "Read?";
+
+    const deleteBook = document.createElement("div");
+    deleteBook.classList = "delete";
+    deleteBook.textContent = "Delete";
+    
+
 
     header.appendChild(title);
     header.appendChild(author);
     header.appendChild(pages);
     header.appendChild(status);
+    header.appendChild(deleteBook)
     
 }
 
 function createSampleBook(){
 
-    const title = "Title";
-    const author = "Author";
-    const pages = "100";
+    const title = "The Hobbit";
+    const author = "J.R.R Tolkein";
+    const pages = "310";
     const read = true;
 
-   
     library.push(new Book(title, author, pages, read, false));
 
     updateLibrary();
