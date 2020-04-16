@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title> Library </title>
+</head>
+
+<body>
+    <h1> Sid's Library </h1>
+
+    <div id = "formContainer">
+        <form id = "bookForm" onsubmit="return false" autocomplete="off"> 
+
+            <h2> Add Book </h2>
+
+            <input type="text" name="title" placeholder="Title"> <br> 
+            <input type="text" name="author" placeholder="Author"> <br>
+            <input type="number" name="pages" min="1" placeholder="# Of Pages"> <br>
+            
+            <h3> Book Completed ? </h3>
+            <div class="theme-switch-wrapper">
+                <label class="theme-switch" for="checkbox">
+                    <input type="checkbox" name = "read" id="checkbox" />
+                    <div class="slider round"></div>
+                </label>
+            </div>
+
+            <div id = "submit"> 
+                <button> Add Book </button> <br>
+            </div>
+        
+            
+            
+            
+        </form>
+    </div>
+
+    <div id= "booksContainer">
+
+        <div id = "header">
+            
+        </div>
+    
+    </div>
+
+    <script src = "script.js"> </script>
+    
+</body>
+</html>

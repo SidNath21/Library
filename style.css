@@ -1,0 +1,226 @@
+body{
+    background-color: black;
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+    font-size: 24px;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    line-height: 1;
+}
+
+#formContainer{
+
+    min-width: 450px;
+    width: 35%;
+    margin: 1em auto;
+    border: 10px solid blue;
+    background-color: #34495e;
+    border-radius: 10px;
+    
+}
+
+#bookForm{
+    
+    background-color: #191919;
+    border: 5px solid black;
+    width: 75%;
+    margin: 1em auto;
+    padding: 0;
+    
+}
+
+#bookForm h2{
+    color: white;
+    text-transform: uppercase;
+    font-weight: lighter;
+}
+
+#bookForm input[type = "text"], #bookForm input[type = "number"]{
+    font-size: 18px;
+    border: 0;
+    background: none;
+    margin: 0.5em auto;
+    
+    text-align: center;
+    border: 2px solid #00ffff;
+    padding: 0.5em 0.5em;
+    border-radius: 25px;
+    width: 40%;
+    outline: none;
+    color: white;
+    transition: 0.25s;
+}
+
+#bookForm input[type = "text"]:focus, #bookForm input[type = "number"]:focus{
+    width: 60%;
+    border-color: #2ecc71;
+}
+
+
+#submit{
+    border-top: 5px solid black;
+    width: 100%;
+    
+}
+
+#bookForm button{
+    
+    border: 0;
+    font-size: 24px;
+    background: none;
+    background-color: transparent;
+    display: block;
+    margin: auto;
+    margin-top: 1em;
+    text-align: center;
+    border: 2px solid #2ecc71;
+    padding: 0.5em 2em;
+    outline: none;
+    color: white;
+    border-radius: 25px;
+    transition: 0.25s;
+    cursor: pointer;
+}
+
+#bookForm button:hover{
+    background: #2ecc71;
+}
+
+
+#booksContainer{
+    margin: 1em auto;
+    width: 80%;
+    min-width: 450px;
+    border: 10px solid red;
+    background-color: tomato;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+#header{
+    border: 5px solid yellow;
+    background-color: grey;
+    font-size: 28px;
+    font-weight: bold;
+    text-shadow: 3px 3px black;
+    color: white;
+    width: 90% ;
+    margin: 0.5em auto;
+    padding: 0.5em 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: stretch;
+}
+
+
+.bookList{
+    text-align: center;
+    margin: 0.5em auto;
+    padding: 0.5em 0;
+    width: 90%;
+    border: 5px solid black;
+    border-radius: 5px;
+    background-color: #191919 ;
+    display: flex;
+    flex-direction: row;
+    
+    align-items: stretch;
+}
+
+.title{
+    width: 25%;
+    text-align: center;
+    border-right: 1px solid white;
+}
+
+.author{
+    width: 25%;
+    text-align: center;
+    border-left: 1px solid white;
+    border-right: 1px solid white;
+    
+}
+
+.pages{
+    width: 25%;
+    text-align: center;
+    border-left: 1px solid white;
+    border-right: 1px solid white;
+    
+}
+
+.status{
+    width: 25%;
+    
+    text-align: center;
+    border-left: 1px solid white;
+    
+    
+    
+}
+
+.theme-switch-wrapper {
+    display: flex;
+    align-items: center;
+    position: relative;
+    margin: 1em ;
+}
+  
+h3{
+    line-height: 0;
+}
+
+.theme-switch {
+    display: inline-block;
+    height: 34px;
+    position: relative;
+    width: 60px;
+    margin: auto;
+}
+  
+.theme-switch input {
+    display:none;
+}
+  
+.slider {
+    background-color: #ccc;
+    bottom: 0;
+    cursor: pointer;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    transition: .4s;
+}
+  
+.slider:before {
+    background-color: #fff;
+    bottom: 4px;
+    content: "";
+    height: 26px;
+    left: 4px;
+    position: absolute;
+    transition: .4s;
+    width: 26px;
+}
+  
+input:checked + .slider {
+    background-color: #66bb6a;
+}
+  
+input:checked + .slider:before {
+    transform: translateX(26px);
+}
+  
+.slider.round {
+    border-radius: 34px;
+}
+  
+.slider.round:before {
+    border-radius: 50%;
+}
+
+
