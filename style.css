@@ -206,13 +206,13 @@ body{
     border: 3px solid;
     cursor: pointer;
     outline: none;
-    transition:  0.25s linear;
+    transition:  0.5s linear;
     
     
 }
 
 .deleteButton:hover{
-    color: black;
+    color: maroon;
     
 }
 

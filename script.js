@@ -8,7 +8,7 @@ const header = document.querySelector("#header");
 submit.addEventListener("click", addBookToLibrary);
 
 createHeading();
-createSampleBook();
+//createSampleBook();
 
 function addBookToLibrary(){
     const title = form.elements["title"].value;
@@ -22,6 +22,8 @@ function addBookToLibrary(){
     library.push(new Book(title, author, pages, read, false));
 
     updateLibrary();
+
+    updateData();
 
 }
 
@@ -92,21 +94,23 @@ function updateLibrary(){
             statusButton.classList = "statusButton";
             statusButton.textContent = (bookStatus == true) ? "Yes" : "No"; 
             status.appendChild(statusButton);
+           
 
             statusButton.addEventListener("click", function(){
                 let text = statusButton.textContent;
                 statusButton.textContent = (text == "Yes") ? "No" : "Yes"; 
+                library[this.parentElement.parentElement.value].bookStatus == (statusButton.textContent == "Yes") ? true : false;
+                updateData();
             });
-
-           
-
+            
+            
             const deleteBook = document.createElement("div");
             deleteBook.classList = "delete";
             const deleteButton = document.createElement("button");
             deleteButton.classList = "deleteButton";
             deleteButton.textContent = "X";
             deleteBook.appendChild(deleteButton);
-
+            
             deleteButton.addEventListener("click", function(){
                 book.parentNode.removeChild(book);
                 delete_book(i);
@@ -122,12 +126,16 @@ function updateLibrary(){
         }
 
     }
+
+    updateData();
 }
 
 function delete_book(index){
     
     library.splice(index, 1);
     updateLibrary();
+
+    updateData();
 }
 
 function createHeading(){
@@ -173,6 +181,30 @@ function createSampleBook(){
     library.push(new Book(title, author, pages, read, false));
 
     updateLibrary();
+    updateData();
 
 
 }
+
+function updateData(){
+    localStorage.setItem("library",JSON.stringify(library));
+}
+  
+  
+  window.onload=function(){
+    
+    if(localStorage.getItem("library")==null){
+
+      createSampleBook();  
+      localStorage.setItem("library",JSON.stringify(library));
+
+    }else{
+      let data=JSON.parse(localStorage.getItem("library"));
+      console.log(data);
+      for(let i=0;i<data.length;i++){
+        let obj=data[i];
+        library.push(new Book(obj.title,obj.author,obj.pages,obj.read,obj.color));
+      }
+      updateLibrary();
+    }
+  }
